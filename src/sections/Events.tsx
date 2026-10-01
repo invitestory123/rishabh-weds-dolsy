@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, MapPin, Clock, Sparkles, Sun, Utensils, Shirt, CalendarCheck } from "lucide-react";
+import { Heart, MapPin, Clock, Sparkles, Sun, Utensils, Shirt } from "lucide-react";
 import Reveal, { SectionHeading } from "../components/Reveal";
 import FairyLights from "../components/FairyLights";
 import Tilt from "../components/Tilt";

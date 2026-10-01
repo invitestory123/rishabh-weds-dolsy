@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, MapPin, Sparkles, Shirt, Calendar } from "lucide-react";
+import { Clock, MapPin, Shirt, Calendar } from "lucide-react";
 import Reveal, { SectionHeading } from "../components/Reveal";
 import { wedding, type TimelineDay } from "../config";
 

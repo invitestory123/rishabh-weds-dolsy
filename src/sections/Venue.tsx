@@ -134,7 +134,7 @@ export default function Venue() {
                 <p className="text-[11px] uppercase tracking-[0.3em] text-[#e2c88f] mb-1">
                   Spaces inside Lal Vilas:
                 </p>
-                {locationHighlights.map((loc, i) => {
+                {locationHighlights.map((loc) => {
                   const Icon = loc.icon;
                   return (
                     <div

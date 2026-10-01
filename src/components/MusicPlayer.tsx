@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Volume2, VolumeX, Music } from "lucide-react";
+import { Music } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function MusicPlayer() {
