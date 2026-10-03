@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Share2, Check, Heart } from "lucide-react";
+import { Share2, Check, Heart, Phone } from "lucide-react";
 import Reveal from "../components/Reveal";
 import { wedding } from "../config";
 
@@ -147,9 +147,23 @@ export default function Footer() {
           </motion.button>
         </div>
 
-        <p className="mt-6 flex items-center justify-center gap-1.5 text-[11px] tracking-widest text-[#f5eee2]/50">
+        {/* Contact / Credits */}
+        <div className="mt-5 flex flex-col items-center justify-center gap-1 text-center">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-[#e2c88f]/85 font-medium">
+            A One Wed Day Films
+          </p>
+          <a
+            href="tel:9315688830"
+            className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.2em] text-[#f5eee2]/65 hover:text-[#e2c88f] transition-colors"
+          >
+            <Phone size={10} className="text-[#e2c88f]/80" />
+            <span>9315688830</span>
+          </a>
+        </div>
+
+        <p className="mt-4 flex items-center justify-center gap-1.5 text-[10px] tracking-widest text-[#f5eee2]/40">
           <span>Crafted with</span>
-          <Heart size={12} className="fill-[#eeb2c0] text-[#eeb2c0]" />
+          <Heart size={11} className="fill-[#eeb2c0] text-[#eeb2c0]" />
           <span>for Rishabh & Dolsy</span>
         </p>
       </Reveal>
