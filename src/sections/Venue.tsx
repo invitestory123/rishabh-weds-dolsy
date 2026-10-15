@@ -65,10 +65,10 @@ export default function Venue() {
 
       <div className="mx-auto flex max-w-lg flex-col gap-6">
         <Reveal className="flex flex-col items-center gap-2 text-center">
-          <span className="font-display text-3xl sm:text-4xl text-[#f6e2ae]">
+          <span className="font-display text-3xl sm:text-4xl text-[#ffd978] font-semibold drop-shadow-[0_2px_12px_rgba(255,217,102,0.35)]">
             {wedding.venue.name}
           </span>
-          <p className="flex items-center justify-center gap-2 text-[13px] text-[#f5eee2]/80 max-w-sm">
+          <p className="flex items-center justify-center gap-2 text-[13.5px] text-[#f7f0e6]/90 max-w-sm font-medium">
             <MapPin size={15} className="text-[#eeb2c0] shrink-0" />
             {wedding.venue.address}
           </p>
@@ -76,7 +76,7 @@ export default function Venue() {
 
         {/* segmented toggle — Map / Specific Locations */}
         <Reveal delay={0.05} className="flex justify-center">
-          <div className="relative flex rounded-full border border-[#e2c88f]/30 bg-white/[0.04] p-1 backdrop-blur-md">
+          <div className="relative flex rounded-full border border-[#ffd978]/40 bg-[#1f194e]/80 p-1 backdrop-blur-md">
             {(
               [
                 ["map", "Interactive Map", MapIcon],
@@ -87,13 +87,13 @@ export default function Venue() {
                 key={key}
                 onClick={() => setView(key)}
                 className={`relative z-10 flex items-center gap-2 rounded-full px-5 py-2 text-[11px] uppercase tracking-[0.2em] transition-colors ${
-                  view === key ? "text-[#1c1640] font-semibold" : "text-[#f5eee2]/70 hover:text-[#f5eee2]"
+                  view === key ? "text-[#1c1640] font-semibold" : "text-[#f7f0e6]/80 hover:text-[#f7f0e6]"
                 }`}
               >
                 {view === key && (
                   <motion.span
                     layoutId="venue-pill"
-                    className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#e2c88f] to-[#eeb2c0]"
+                    className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-[#ffd978] to-[#eeb2c0]"
                     transition={{ type: "spring", stiffness: 320, damping: 28 }}
                   />
                 )}
@@ -106,7 +106,7 @@ export default function Venue() {
         {/* map / locations panel */}
         <Reveal
           delay={0.1}
-          className="relative overflow-hidden rounded-3xl border border-[#e2c88f]/35 shadow-[0_12px_50px_rgba(0,0,0,0.55)] bg-white/[0.03] backdrop-blur-md min-h-[300px]"
+          className="relative overflow-hidden rounded-3xl border border-[#ffd978]/40 shadow-[0_16px_50px_rgba(0,0,0,0.55)] bg-[#1f194e]/80 backdrop-blur-md min-h-[300px]"
         >
           <AnimatePresence mode="wait" initial={false}>
             {view === "map" ? (

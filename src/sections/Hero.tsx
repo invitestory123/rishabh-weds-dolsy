@@ -28,9 +28,9 @@ function Lantern({
         }}
       />
       <img
-        src="https://media.invitestory.in/midnight-stargaze/assets/lantern.webp"
+        src="/assets/lantern.webp"
         alt=""
-        className="relative w-16 drop-shadow-[0_10px_20px_rgba(0,0,0,0.55)] sm:w-20"
+        className="relative w-12 drop-shadow-[0_10px_20px_rgba(0,0,0,0.55)] sm:w-16"
         style={{ animation: "lantern-bob 6s ease-in-out infinite" }}
       />
     </motion.div>
@@ -42,11 +42,11 @@ export default function Hero() {
     <section className="relative flex min-h-svh flex-col items-center overflow-hidden px-6 pb-20 pt-0">
       {/* navy paisley texture + aurora */}
       <img
-        src="https://media.invitestory.in/midnight-stargaze/assets/navy-texture.webp"
+        src="/assets/navy-texture.webp"
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-60"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0c0a24]/40 via-transparent to-[#0c0a24]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#141138]/40 via-transparent to-[#141138]" />
       <Aurora className="opacity-70" />
 
       {/* hanging jasmine & rose garland with fairy lights */}
@@ -58,7 +58,7 @@ export default function Hero() {
         style={{ transformOrigin: "top center" }}
       >
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/garland-top.webp"
+          src="/assets/garland-top.webp"
           alt=""
           className="w-full object-cover object-top"
           style={{
@@ -212,16 +212,16 @@ export default function Hero() {
             </p>
           </div>
 
-          <p className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.25em] text-[#e2c88f]">
-            <MapPin size={13} className="text-[#eeb2c0]" />
-            {wedding.venue.name} · {wedding.venue.city}
+          <p className="flex items-center justify-center gap-1.5 text-[11px] sm:text-[12px] uppercase tracking-[0.25em] text-[#ffd978] font-medium px-4 whitespace-nowrap">
+            <MapPin size={13} className="text-[#eeb2c0] shrink-0" />
+            <span>{wedding.venue.name} · {wedding.venue.city}</span>
           </p>
         </motion.div>
       </div>
 
-      {/* lanterns flanking the stage */}
-      <Lantern className="bottom-24 left-3 sm:left-10" delay={1.9} />
-      <Lantern className="bottom-24 right-3 sm:right-10" delay={2.1} />
+      {/* lanterns flanking the stage - positioned cleanly on sides */}
+      <Lantern className="bottom-40 left-1 sm:left-8" delay={1.9} />
+      <Lantern className="bottom-40 right-1 sm:right-8" delay={2.1} />
 
       {/* scroll cue */}
       <motion.div

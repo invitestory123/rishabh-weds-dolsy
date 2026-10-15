@@ -43,16 +43,16 @@ export default function InviteMessage() {
   return (
     <section className="relative flex flex-col items-center gap-12 px-6 py-24">
       <Reveal className="flex max-w-md flex-col items-center gap-5 text-center">
-        <span className="font-display text-base tracking-[0.3em] text-[#e2c88f]">
+        <span className="font-display text-lg tracking-[0.3em] text-[#ffd978] font-medium">
           {wedding.verse.hindi}
         </span>
         <motion.img
-          src="https://media.invitestory.in/midnight-stargaze/assets/mandala.png"
-          alt=""
-          className="w-16 opacity-70"
+          src="/assets/mandala.png"
+          alt="Sacred Mandala"
+          className="w-24 sm:w-28 drop-shadow-[0_0_22px_rgba(255,217,102,0.7)] contrast-[1.2] brightness-110"
           whileInView={{ rotate: 360 }}
           viewport={{ once: true }}
-          transition={{ duration: 14, ease: "linear" }}
+          transition={{ duration: 18, ease: "linear", repeat: Infinity }}
         />
         <VerseWords text={wedding.verse.text} />
       </Reveal>

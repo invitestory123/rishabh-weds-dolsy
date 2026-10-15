@@ -31,19 +31,19 @@ export default function IntroGate({
     >
       {/* ── Left door ── */}
       <motion.div
-        className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#0c0a24]"
+        className="absolute inset-y-0 left-0 w-1/2 overflow-hidden bg-[#141138]"
         animate={opening ? { x: "-100%" } : { x: 0 }}
         transition={{ duration: 1.5, delay: 0.35, ease: doorEase }}
       >
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/navy-texture.webp"
+          src="/assets/navy-texture.webp"
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-right opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0c0a24]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#141138]/70 to-transparent" />
         {/* half mandala — splits as doors part */}
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/mandala.png"
+          src="/assets/mandala.png"
           alt=""
           className="absolute right-[-42vmin] top-1/2 w-[84vmin] max-w-none -translate-y-1/2 opacity-25"
         />
@@ -51,19 +51,19 @@ export default function IntroGate({
 
       {/* ── Right door ── */}
       <motion.div
-        className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#0c0a24]"
+        className="absolute inset-y-0 right-0 w-1/2 overflow-hidden bg-[#141138]"
         animate={opening ? { x: "100%" } : { x: 0 }}
         transition={{ duration: 1.5, delay: 0.35, ease: doorEase }}
         onAnimationComplete={() => opening && onOpened()}
       >
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/navy-texture.webp"
+          src="/assets/navy-texture.webp"
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-left opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-[#0c0a24]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-l from-[#141138]/70 to-transparent" />
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/mandala.png"
+          src="/assets/mandala.png"
           alt=""
           className="absolute left-[-42vmin] top-1/2 w-[84vmin] max-w-none -translate-y-1/2 opacity-25"
         />
@@ -90,7 +90,7 @@ export default function IntroGate({
       >
         {/* garland crown above the gate content */}
         <motion.img
-          src="https://media.invitestory.in/midnight-stargaze/assets/garland-top.webp"
+          src="/assets/garland-top.webp"
           alt=""
           className="pointer-events-none absolute inset-x-0 top-0 w-full object-cover object-top opacity-90"
           initial={{ opacity: 0, y: -30 }}
@@ -105,7 +105,7 @@ export default function IntroGate({
           className="relative flex flex-col items-center gap-5 text-center max-w-md"
         >
           <motion.img
-            src="https://media.invitestory.in/midnight-stargaze/assets/ganesha.png"
+            src="/assets/ganesha.png"
             alt="Lord Ganesha"
             className="w-20 drop-shadow-[0_0_24px_rgba(226,200,143,0.5)] sm:w-24"
             initial={{ opacity: 0, scale: 0.7 }}

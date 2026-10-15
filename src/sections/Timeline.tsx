@@ -77,26 +77,26 @@ export default function Timeline() {
                   <span className="absolute left-[10px] sm:left-[18px] top-2 h-[12px] w-[12px] -translate-x-1/2 rounded-full border-2 border-[#1c1640] bg-[#eeb2c0] shadow-[0_0_12px_2px_rgba(238,178,192,0.6)]" />
 
                   {/* Event content box */}
-                  <div className="flex-1 rounded-2xl border border-[#e2c88f]/25 bg-white/[0.04] p-4 sm:p-5 backdrop-blur-md hover:border-[#e2c88f]/50 transition-all">
+                  <div className="flex-1 rounded-2xl border border-[#ffd978]/35 bg-[#1f194e]/85 p-4 sm:p-5 backdrop-blur-md hover:border-[#ffd978]/60 shadow-[0_10px_30px_rgba(0,0,0,0.45)] transition-all">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e2c88f]/40 bg-[#17143c] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[#e2c88f]">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#ffd978]/40 bg-[#161240] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[#ffd978]">
                         <Clock size={12} className="text-[#eeb2c0]" />
                         {evt.time}
                       </span>
 
                       {evt.attire && (
-                        <span className="inline-flex items-center gap-1 rounded-full border border-[#eeb2c0]/40 bg-[#eeb2c0]/10 px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-[#eeb2c0]">
+                        <span className="inline-flex items-center gap-1 rounded-full border border-[#eeb2c0]/40 bg-[#eeb2c0]/10 px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-[#f8c7d4]">
                           <Shirt size={11} /> {evt.attire}
                         </span>
                       )}
                     </div>
 
-                    <h4 className="font-display text-lg sm:text-xl text-[#f5eee2] font-medium mt-1">
+                    <h4 className="font-display text-lg sm:text-xl text-[#f7f0e6] font-semibold mt-1">
                       {evt.title}
                     </h4>
 
                     {evt.location && (
-                      <p className="flex items-center gap-1.5 text-[12px] text-[#e2c88f]/80 mt-1">
+                      <p className="flex items-center gap-1.5 text-[12px] text-[#ffd978]/90 mt-1 font-medium">
                         <MapPin size={13} className="text-[#eeb2c0]" />
                         {evt.location}
                       </p>

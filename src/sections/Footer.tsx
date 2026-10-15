@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Share2, Check, Heart, Phone } from "lucide-react";
+import { Share2, Check, Heart, Phone, Instagram } from "lucide-react";
 import Reveal from "../components/Reveal";
 import { wedding } from "../config";
 
@@ -50,16 +50,16 @@ export default function Footer() {
     <footer className="relative flex min-h-[80svh] flex-col justify-end overflow-hidden pb-12 pt-20">
       {/* background texture */}
       <img
-        src="https://media.invitestory.in/midnight-stargaze/assets/navy-texture.webp"
+        src="/assets/navy-texture.webp"
         alt=""
         className="absolute inset-0 h-full w-full object-cover opacity-70"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0c0a24] via-[#0c0a24]/60 to-[#060514]/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#141138] via-[#141138]/60 to-[#0c0926]/95" />
 
       {/* hanging garland overlay — drapes over the footer top */}
       <div className="pointer-events-none absolute left-1/2 top-0 z-20 w-[150%] max-w-none -translate-x-1/2 sm:w-full">
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/garland-top.webp"
+          src="/assets/garland-top.webp"
           alt=""
           className="w-full object-cover object-top"
           style={{
@@ -70,7 +70,7 @@ export default function Footer() {
       </div>
 
       {/* marquee strip */}
-      <div className="relative z-10 mb-8 overflow-hidden border-y border-[#e2c88f]/25 py-3">
+      <div className="relative z-10 mb-8 overflow-hidden border-y border-[#ffd978]/25 py-3">
         <div
           className="flex w-max whitespace-nowrap"
           style={{ animation: "marquee 22s linear infinite" }}
@@ -78,7 +78,7 @@ export default function Footer() {
           {[0, 1].map((n) => (
             <span
               key={n}
-              className="font-display px-4 text-sm uppercase tracking-[0.4em] text-[#e2c88f]"
+              className="font-display px-4 text-sm uppercase tracking-[0.4em] text-[#ffd978]"
             >
               {Array(6)
                 .fill(`${wedding.hashtag} ✦ ${wedding.dateLabel} ✦ Lal Vilas, Neemrana ✦ `)
@@ -98,18 +98,25 @@ export default function Footer() {
       {/* closing message */}
       <Reveal className="relative z-10 mx-auto mt-4 flex max-w-md flex-col items-center gap-4 px-6 text-center">
         <img
-          src="https://media.invitestory.in/midnight-stargaze/assets/mandala.png"
+          src="/assets/mandala.png"
           alt=""
-          className="w-14 opacity-80"
+          className="w-16 drop-shadow-[0_0_16px_rgba(255,217,102,0.6)] contrast-125"
         />
 
-        <p className="font-script text-gold text-4xl sm:text-5xl leading-snug">
+        {/* Closing phrase in strictly ONE line */}
+        <p className="font-script-bold text-gold-bright text-2xl sm:text-4xl md:text-[42px] whitespace-nowrap leading-tight py-2 px-1 overflow-visible">
           We can't wait to celebrate with you
         </p>
 
-        <p className="text-[12px] uppercase tracking-[0.3em] text-[#f5eee2]/80 font-medium">
-          With love & blessings, the Gulati & Arora families
-        </p>
+        {/* With love & blessings in 2 lines */}
+        <div className="flex flex-col items-center gap-1 text-center">
+          <p className="text-[13px] uppercase tracking-[0.3em] text-[#ffd978] font-semibold">
+            With love & blessings
+          </p>
+          <p className="text-[12px] uppercase tracking-[0.25em] text-[#f7f0e6]/90 font-medium">
+            Gulati and Arora families
+          </p>
+        </div>
 
         <div className="hairline-gold mt-1 w-36" />
 
@@ -121,7 +128,7 @@ export default function Footer() {
             className={`rounded-full border px-5 py-2.5 text-[11px] tracking-[0.2em] transition-all ${
               copied
                 ? "border-[#eeb2c0] bg-[#eeb2c0]/15 text-[#eeb2c0]"
-                : "border-[#e2c88f]/40 text-[#f5eee2]/80 hover:border-[#e2c88f] hover:bg-[#e2c88f]/10"
+                : "border-[#ffd978]/40 text-[#f7f0e6]/90 hover:border-[#ffd978] hover:bg-[#ffd978]/10"
             }`}
           >
             {copied ? "Copied ✓" : `${wedding.hashtag} · tap to copy`}
@@ -131,11 +138,11 @@ export default function Footer() {
           <motion.button
             onClick={handleShare}
             whileTap={{ scale: 0.92 }}
-            className="flex items-center gap-2 rounded-full border border-[#e2c88f]/50 bg-gradient-to-r from-[#e2c88f]/15 to-[#eeb2c0]/15 px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-[#f6e2ae] hover:border-[#e2c88f] transition-all"
+            className="flex items-center gap-2 rounded-full border border-[#ffd978]/50 bg-gradient-to-r from-[#ffd978]/20 to-[#eeb2c0]/20 px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-[#ffd978] hover:border-[#ffd978] transition-all"
           >
             {shared ? (
               <>
-                <Check size={14} className="text-[#e2c88f]" />
+                <Check size={14} className="text-[#ffd978]" />
                 <span>Link Copied</span>
               </>
             ) : (
@@ -145,23 +152,35 @@ export default function Footer() {
               </>
             )}
           </motion.button>
+
+          {/* Instagram Share / Tag */}
+          <motion.a
+            href={`https://www.instagram.com/explore/tags/${wedding.hashtag.replace(/[^a-zA-Z0-9_]/g, "")}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileTap={{ scale: 0.92 }}
+            className="flex items-center gap-2 rounded-full border border-[#eeb2c0]/50 bg-[#17133e] px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-[#f8c7d4] hover:border-[#ffd978] transition-all"
+          >
+            <Instagram size={14} className="text-[#eeb2c0]" />
+            <span>Share Instagram</span>
+          </motion.a>
         </div>
 
         {/* Contact / Credits */}
         <div className="mt-5 flex flex-col items-center justify-center gap-1 text-center">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-[#e2c88f]/85 font-medium">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-[#ffd978]/90 font-medium">
             A One Wed Day Films
           </p>
           <a
             href="tel:9315688830"
-            className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.2em] text-[#f5eee2]/65 hover:text-[#e2c88f] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.2em] text-[#f7f0e6]/75 hover:text-[#ffd978] transition-colors"
           >
-            <Phone size={10} className="text-[#e2c88f]/80" />
+            <Phone size={10} className="text-[#ffd978]/90" />
             <span>9315688830</span>
           </a>
         </div>
 
-        <p className="mt-4 flex items-center justify-center gap-1.5 text-[10px] tracking-widest text-[#f5eee2]/40">
+        <p className="mt-4 flex items-center justify-center gap-1.5 text-[10px] tracking-widest text-[#f7f0e6]/50">
           <span>Crafted with</span>
           <Heart size={11} className="fill-[#eeb2c0] text-[#eeb2c0]" />
           <span>for Rishabh & Dolsy</span>

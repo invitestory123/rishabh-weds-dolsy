@@ -23,11 +23,12 @@ export default function Gallery() {
 
   return (
     <section className="relative overflow-hidden px-5 py-24" id="gallery">
-      <SectionHeading kicker="Memories & Love" title="Moments of Forever" />
+      {/* Memories & Love kicker removed, title protected from clipping */}
+      <SectionHeading title="Moments of Forever" />
 
       <div className="relative mx-auto max-w-5xl">
         <Reveal className="mb-6 text-center">
-          <p className="font-display text-base italic text-[#f5eee2]/75 max-w-md mx-auto">
+          <p className="font-display text-base italic text-[#f7f0e6]/80 max-w-md mx-auto">
             "Every glance, every smile, and every promise leading to our big day."
           </p>
         </Reveal>
@@ -40,7 +41,7 @@ export default function Gallery() {
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 onClick={() => setSelectedIdx(idx)}
-                className="group relative cursor-pointer overflow-hidden rounded-t-[5rem] rounded-b-2xl border border-[#e2c88f]/40 bg-white/[0.04] p-2 backdrop-blur-md shadow-[0_10px_35px_rgba(0,0,0,0.5)]"
+                className="group relative cursor-pointer overflow-hidden rounded-t-[5rem] rounded-b-2xl border-t border-x border-[#ffd978]/40 border-b-0 bg-[#1f194e]/90 p-2 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.55)]"
               >
                 {/* Photo frame */}
                 <div className="relative overflow-hidden rounded-t-[4.5rem] rounded-b-xl aspect-[3/4] w-full">
@@ -51,24 +52,25 @@ export default function Gallery() {
                     loading="lazy"
                   />
                   {/* Subtle vignette gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0a24]/90 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#141138]/95 via-transparent to-transparent opacity-65 group-hover:opacity-85 transition-opacity" />
 
-                  {/* Inner golden arch line */}
-                  <div className="pointer-events-none absolute inset-2 rounded-t-[4.1rem] rounded-b-lg border border-[#e2c88f]/35" />
+                  {/* Inner golden arch line - bottom line removed */}
+                  <div className="pointer-events-none absolute inset-2 rounded-t-[4.1rem] border-t border-x border-[#ffd978]/30 border-b-0" />
 
                   {/* Caption badge at bottom */}
                   <div className="absolute inset-x-0 bottom-0 p-4 text-center transform translate-y-1 group-hover:translate-y-0 transition-transform">
-                    <span className="font-display text-lg text-[#f6e2ae] block drop-shadow-md">
+                    {/* Calligraphy style bold + bigger font size */}
+                    <span className="font-script-bold text-2xl sm:text-3xl text-gold-bright block drop-shadow-[0_2px_12px_rgba(255,217,102,0.6)] py-1 leading-snug">
                       {item.title}
                     </span>
-                    <p className="font-display text-xs italic text-[#f5eee2]/80 line-clamp-1 mt-0.5">
+                    <p className="font-display text-xs italic text-[#f7f0e6]/85 line-clamp-1 mt-0.5">
                       {item.caption}
                     </p>
                   </div>
 
                   {/* Center hover sparkle */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="rounded-full bg-[#1c1640]/80 p-3 border border-[#e2c88f]/60 text-[#e2c88f] shadow-[0_0_20px_rgba(226,200,143,0.5)]">
+                    <span className="rounded-full bg-[#1c1640]/80 p-3 border border-[#ffd978]/60 text-[#ffd978] shadow-[0_0_20px_rgba(255,217,102,0.5)]">
                       <Sparkles size={18} />
                     </span>
                   </div>
@@ -92,7 +94,7 @@ export default function Gallery() {
             {/* Close button */}
             <button
               onClick={() => setSelectedIdx(null)}
-              className="absolute top-6 right-6 z-50 rounded-full border border-[#e2c88f]/40 bg-[#0c0a24]/80 p-2.5 text-[#f6e2ae] hover:border-[#e2c88f] hover:bg-[#1a1645] transition-colors"
+              className="absolute top-6 right-6 z-50 rounded-full border border-[#ffd978]/40 bg-[#141138]/80 p-2.5 text-[#ffd978] hover:border-[#ffd978] hover:bg-[#1a1645] transition-colors"
             >
               <X size={20} />
             </button>
@@ -100,7 +102,7 @@ export default function Gallery() {
             {/* Prev button */}
             <button
               onClick={handlePrev}
-              className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 rounded-full border border-[#e2c88f]/40 bg-[#0c0a24]/80 p-2.5 text-[#f6e2ae] hover:border-[#e2c88f] hover:bg-[#1a1645] transition-colors"
+              className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-50 rounded-full border border-[#ffd978]/40 bg-[#141138]/80 p-2.5 text-[#ffd978] hover:border-[#ffd978] hover:bg-[#1a1645] transition-colors"
             >
               <ChevronLeft size={22} />
             </button>
@@ -108,7 +110,7 @@ export default function Gallery() {
             {/* Next button */}
             <button
               onClick={handleNext}
-              className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 rounded-full border border-[#e2c88f]/40 bg-[#0c0a24]/80 p-2.5 text-[#f6e2ae] hover:border-[#e2c88f] hover:bg-[#1a1645] transition-colors"
+              className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 rounded-full border border-[#ffd978]/40 bg-[#141138]/80 p-2.5 text-[#ffd978] hover:border-[#ffd978] hover:bg-[#1a1645] transition-colors"
             >
               <ChevronRight size={22} />
             </button>
@@ -119,7 +121,7 @@ export default function Gallery() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-h-[85vh] max-w-lg overflow-hidden rounded-t-[5rem] rounded-b-2xl border-2 border-[#e2c88f]/60 bg-[#0c0a24] shadow-[0_0_50px_rgba(226,200,143,0.3)] p-2"
+              className="relative max-h-[85vh] max-w-lg overflow-hidden rounded-t-[5rem] rounded-b-2xl border-t border-x border-[#ffd978]/60 border-b-0 bg-[#141138] shadow-[0_0_50px_rgba(255,217,102,0.3)] p-2"
             >
               <div className="relative overflow-hidden rounded-t-[4.5rem] rounded-b-xl">
                 <img
@@ -130,14 +132,14 @@ export default function Gallery() {
               </div>
 
               <div className="p-4 text-center">
-                <h4 className="font-display text-xl text-[#f6e2ae] flex items-center justify-center gap-2">
-                  <Heart size={16} className="text-[#eeb2c0] fill-[#eeb2c0]" />
+                <h4 className="font-script-bold text-3xl sm:text-4xl text-gold-bright flex items-center justify-center gap-2 py-1 leading-snug">
+                  <Heart size={20} className="text-[#eeb2c0] fill-[#eeb2c0] shrink-0" />
                   {photos[selectedIdx].title}
                 </h4>
-                <p className="font-display text-sm italic text-[#f5eee2]/80 mt-1">
+                <p className="font-display text-sm italic text-[#f7f0e6]/85 mt-1">
                   {photos[selectedIdx].caption}
                 </p>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#e2c88f]/70 mt-2 block">
+                <span className="text-[10px] uppercase tracking-[0.25em] text-[#ffd978]/70 mt-2 block">
                   Photo {selectedIdx + 1} of {photos.length}
                 </span>
               </div>

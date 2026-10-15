@@ -28,16 +28,20 @@ export function SectionHeading({
   kicker,
   title,
 }: {
-  kicker: string;
+  kicker?: string;
   title: string;
 }) {
   return (
-    <Reveal className="mb-10 flex flex-col items-center gap-3 text-center">
-      <span className="text-[11px] uppercase tracking-[0.4em] text-[#e2c88f]">
-        {kicker}
-      </span>
-      <h2 className="font-script text-gold text-5xl sm:text-6xl">{title}</h2>
-      <div className="hairline-gold w-40" />
+    <Reveal className="mb-10 flex flex-col items-center gap-2 text-center overflow-visible">
+      {kicker && (
+        <span className="text-[11px] uppercase tracking-[0.4em] text-[#ffd978]">
+          {kicker}
+        </span>
+      )}
+      <h2 className="font-script text-gold-bright text-5xl sm:text-6xl pt-4 pb-2 px-3 leading-[1.3] overflow-visible">
+        {title}
+      </h2>
+      <div className="hairline-gold w-40 mt-1" />
     </Reveal>
   );
 }
