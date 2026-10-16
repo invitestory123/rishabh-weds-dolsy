@@ -43,7 +43,7 @@ export const wedding = {
   // Family details
   groomGrandparents: "Grandson of Late Smt. Leela & Late Sh. Ishwar Datt Gulati",
   groomParents: "Son of Smt. Lalita & Sh. Kailash Gulati",
-  brideGrandparents: "Granddaughter of Late Smt. Raj Rani Arora & Sh. Harbans Lal Arora",
+  brideGrandparents: "Granddaughter of Late Smt. Raj Rani Arora & Late Sh. Harbans Lal Arora",
   brideParents: "Daughter of Smt. Sunita & Sh. Sanjeev Arora",
 
   hashtag: "#RISHUkiDOLO♥️",
@@ -59,7 +59,8 @@ export const wedding = {
     name: "Lal Vilas",
     city: "Neemrana, Rajasthan",
     address: "Lal Vilas, NH-48, Delhi-Jaipur Highway, Neemrana, Rajasthan 301705",
-    mapsQuery: "Lal Vilas Resort Neemrana Rajasthan",
+    mapsQuery: "The Lal Vilas Hotels & Resorts Neemrana Rajasthan",
+    mapUrl: "https://share.google/BJK6EotJCh6p2k42p",
   },
 
   verse: {
@@ -326,6 +327,8 @@ export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
   wedding.venue.mapsQuery
 )}&output=embed`;
 
-export const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-  wedding.venue.mapsQuery
-)}`;
+export const mapsDirectionsUrl =
+  wedding.venue.mapUrl ||
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+    wedding.venue.mapsQuery
+  )}`;

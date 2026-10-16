@@ -65,13 +65,20 @@ export default function Venue() {
 
       <div className="mx-auto flex max-w-lg flex-col gap-6">
         <Reveal className="flex flex-col items-center gap-2 text-center">
-          <span className="font-display text-3xl sm:text-4xl text-[#ffd978] font-semibold drop-shadow-[0_2px_12px_rgba(255,217,102,0.35)]">
-            {wedding.venue.name}
-          </span>
-          <p className="flex items-center justify-center gap-2 text-[13.5px] text-[#f7f0e6]/90 max-w-sm font-medium">
-            <MapPin size={15} className="text-[#eeb2c0] shrink-0" />
-            {wedding.venue.address}
-          </p>
+          <a
+            href={mapsDirectionsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="group flex flex-col items-center transition-opacity hover:opacity-90"
+          >
+            <span className="font-display text-3xl sm:text-4xl text-[#ffd978] font-semibold drop-shadow-[0_2px_12px_rgba(255,217,102,0.35)]">
+              {wedding.venue.name}
+            </span>
+            <p className="flex items-center justify-center gap-2 text-[13.5px] text-[#f7f0e6]/90 max-w-sm font-medium mt-1">
+              <MapPin size={15} className="text-[#eeb2c0] shrink-0" />
+              {wedding.venue.address}
+            </p>
+          </a>
         </Reveal>
 
         {/* segmented toggle — Map / Specific Locations */}

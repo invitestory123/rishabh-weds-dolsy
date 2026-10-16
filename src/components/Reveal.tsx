@@ -29,7 +29,7 @@ export function SectionHeading({
   title,
 }: {
   kicker?: string;
-  title: string;
+  title: React.ReactNode;
 }) {
   return (
     <Reveal className="mb-10 flex flex-col items-center gap-2 text-center overflow-visible">

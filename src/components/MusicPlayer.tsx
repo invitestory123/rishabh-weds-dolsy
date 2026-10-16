@@ -12,6 +12,13 @@ export default function MusicPlayer() {
     audio.volume = 0.5;
     audioRef.current = audio;
 
+    // Explicit ended handler in addition to loop attribute for mobile webview compatibility
+    const handleEnded = () => {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    };
+    audio.addEventListener("ended", handleEnded);
+
     // Listen for custom trigger from IntroGate "Open Invitation"
     const handleTrigger = () => {
       audio.play().then(() => {
@@ -25,6 +32,7 @@ export default function MusicPlayer() {
 
     return () => {
       window.removeEventListener("play-wedding-music", handleTrigger);
+      audio.removeEventListener("ended", handleEnded);
       audio.pause();
     };
   }, []);
