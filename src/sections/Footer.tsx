@@ -104,31 +104,31 @@ export default function Footer() {
         />
 
         {/* Closing phrase in strictly ONE line */}
-        <p className="font-script-bold text-gold-bright text-2xl sm:text-4xl md:text-[42px] whitespace-nowrap leading-tight py-2 px-1 overflow-visible">
+        <p className="font-script-bold text-gold-bright text-3xl sm:text-4xl md:text-[46px] whitespace-nowrap leading-tight py-2 px-1 overflow-visible">
           We can't wait to celebrate with you
         </p>
 
         {/* With love & blessings in 2 lines */}
-        <div className="flex flex-col items-center gap-1 text-center">
-          <p className="text-[13px] uppercase tracking-[0.3em] text-[#ffd978] font-semibold">
+        <div className="flex flex-col items-center gap-1.5 text-center">
+          <p className="text-sm sm:text-base uppercase tracking-[0.3em] text-[#ffd978] font-bold">
             With love & blessings
           </p>
-          <p className="text-[12px] uppercase tracking-[0.25em] text-[#f7f0e6]/90 font-medium">
+          <p className="text-sm sm:text-base uppercase tracking-[0.25em] text-white font-medium">
             Gulati and Arora families
           </p>
         </div>
 
-        <div className="hairline-gold mt-1 w-36" />
+        <div className="hairline-gold mt-1 w-40" />
 
         <div className="flex flex-wrap items-center justify-center gap-3 mt-3">
           {/* Copy Hashtag */}
           <motion.button
             onClick={copyHashtag}
             whileTap={{ scale: 0.92 }}
-            className={`rounded-full border px-5 py-2.5 text-[11px] tracking-[0.2em] transition-all ${
+            className={`rounded-full border px-5 py-2.5 text-xs sm:text-[13px] tracking-[0.2em] font-medium transition-all ${
               copied
                 ? "border-[#eeb2c0] bg-[#eeb2c0]/15 text-[#eeb2c0]"
-                : "border-[#ffd978]/40 text-[#f7f0e6]/90 hover:border-[#ffd978] hover:bg-[#ffd978]/10"
+                : "border-[#ffd978]/40 text-white hover:border-[#ffd978] hover:bg-[#ffd978]/10"
             }`}
           >
             {copied ? "Copied ✓" : `${wedding.hashtag} · tap to copy`}
@@ -138,16 +138,16 @@ export default function Footer() {
           <motion.button
             onClick={handleShare}
             whileTap={{ scale: 0.92 }}
-            className="flex items-center gap-2 rounded-full border border-[#ffd978]/50 bg-gradient-to-r from-[#ffd978]/20 to-[#eeb2c0]/20 px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-[#ffd978] hover:border-[#ffd978] transition-all"
+            className="flex items-center gap-2 rounded-full border border-[#ffd978]/50 bg-gradient-to-r from-[#ffd978]/20 to-[#eeb2c0]/20 px-5 py-2.5 text-xs sm:text-[13px] uppercase tracking-[0.2em] text-[#ffd978] font-medium hover:border-[#ffd978] transition-all"
           >
             {shared ? (
               <>
-                <Check size={14} className="text-[#ffd978]" />
+                <Check size={15} className="text-[#ffd978]" />
                 <span>Link Copied</span>
               </>
             ) : (
               <>
-                <Share2 size={14} className="text-[#eeb2c0]" />
+                <Share2 size={15} className="text-[#eeb2c0]" />
                 <span>Share Invitation</span>
               </>
             )}
@@ -159,23 +159,23 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             whileTap={{ scale: 0.92 }}
-            className="flex items-center gap-2 rounded-full border border-[#eeb2c0]/50 bg-[#17133e] px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] text-[#f8c7d4] hover:border-[#ffd978] transition-all"
+            className="flex items-center gap-2 rounded-full border border-[#eeb2c0]/50 bg-[#17133e] px-5 py-2.5 text-xs sm:text-[13px] uppercase tracking-[0.2em] text-[#f8c7d4] font-medium hover:border-[#ffd978] transition-all"
           >
-            <Instagram size={14} className="text-[#eeb2c0]" />
+            <Instagram size={15} className="text-[#eeb2c0]" />
             <span>Share Instagram</span>
           </motion.a>
         </div>
 
         {/* Contact / Credits */}
-        <div className="mt-5 flex flex-col items-center justify-center gap-1 text-center">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-[#ffd978]/90 font-medium">
+        <div className="mt-5 flex flex-col items-center justify-center gap-1.5 text-center">
+          <p className="text-xs sm:text-[13px] uppercase tracking-[0.25em] text-[#ffd978] font-semibold">
             A One Wed Day Films
           </p>
           <a
             href="tel:9315688830"
-            className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.2em] text-[#f7f0e6]/75 hover:text-[#ffd978] transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs tracking-[0.2em] text-white/85 hover:text-[#ffd978] transition-colors font-medium"
           >
-            <Phone size={10} className="text-[#ffd978]/90" />
+            <Phone size={12} className="text-[#ffd978]" />
             <span>9315688830</span>
           </a>
         </div>

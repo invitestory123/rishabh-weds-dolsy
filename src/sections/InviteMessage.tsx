@@ -8,7 +8,7 @@ function VerseWords({ text }: { text: string }) {
   const words = text.split(" ");
   return (
     <motion.p
-      className="font-display text-2xl italic leading-relaxed text-[#f5eee2]/90"
+      className="font-display text-2xl sm:text-[26px] italic leading-relaxed text-white"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
@@ -42,8 +42,8 @@ function VerseWords({ text }: { text: string }) {
 export default function InviteMessage() {
   return (
     <section className="relative flex flex-col items-center gap-12 px-6 py-24">
-      <Reveal className="flex max-w-md flex-col items-center gap-5 text-center">
-        <span className="font-display text-lg tracking-[0.3em] text-[#ffd978] font-medium">
+      <Reveal className="flex max-w-lg flex-col items-center gap-6 text-center">
+        <span className="font-display text-xl sm:text-2xl tracking-[0.3em] text-[#ffd978] font-semibold drop-shadow-[0_2px_10px_rgba(255,217,102,0.4)]">
           {wedding.verse.hindi}
         </span>
         <motion.img
@@ -58,7 +58,7 @@ export default function InviteMessage() {
       </Reveal>
 
       <Reveal delay={0.15} className="flex flex-col items-center gap-6">
-        <span className="text-[11px] uppercase tracking-[0.45em] text-[#eeb2c0]">
+        <span className="text-xs sm:text-sm uppercase tracking-[0.45em] text-[#f8c7d4] font-medium">
           Counting down to the big day
         </span>
         <Countdown targetISO={wedding.dateISO} />

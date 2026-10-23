@@ -27,8 +27,8 @@ export default function Gallery() {
       <SectionHeading title="Moments of Forever" />
 
       <div className="relative mx-auto max-w-5xl">
-        <Reveal className="mb-6 text-center">
-          <p className="font-display text-base italic text-[#f7f0e6]/80 max-w-md mx-auto">
+        <Reveal className="mb-8 text-center">
+          <p className="font-display text-lg sm:text-xl italic text-[#f7f0e6] max-w-lg mx-auto">
             "Every glance, every smile, and every promise leading to our big day."
           </p>
         </Reveal>
@@ -63,7 +63,7 @@ export default function Gallery() {
                     <span className="font-script-bold text-2xl sm:text-3xl text-gold-bright block drop-shadow-[0_2px_12px_rgba(255,217,102,0.6)] py-1 leading-snug">
                       {item.title}
                     </span>
-                    <p className="font-display text-xs italic text-[#f7f0e6]/85 line-clamp-1 mt-0.5">
+                    <p className="font-display text-sm italic text-white/95 line-clamp-1 mt-1">
                       {item.caption}
                     </p>
                   </div>

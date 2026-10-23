@@ -110,29 +110,39 @@ export default function Hero() {
           </svg>
 
           {/* arch content */}
-          <div className="absolute inset-0 flex flex-col items-center px-6 pt-[33%] text-center">
+          <div className="absolute inset-0 flex flex-col items-center px-6 pt-[20%] text-center">
+            {/* Auspicious golden Ganesha medallion */}
+            <motion.img
+              src="/assets/ganesha.png"
+              alt="Lord Ganesha"
+              className="w-11 sm:w-13 drop-shadow-[0_0_12px_rgba(201,168,106,0.6)] mb-1"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            />
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="font-display text-[9px] sm:text-[9.5px] tracking-[0.14em] text-[#8a6f4d] whitespace-nowrap"
+              className="font-display text-xs sm:text-[13px] font-semibold tracking-[0.16em] text-[#785b37] whitespace-nowrap"
             >
               {wedding.verse.hindi}
             </motion.p>
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.75, duration: 0.8 }}
-              className="mt-1.5 font-display text-[9px] sm:text-[9.5px] font-semibold uppercase tracking-[0.13em] text-[#3a3260] whitespace-nowrap"
+              className="mt-1 font-display text-[11px] sm:text-[12.5px] font-bold uppercase tracking-[0.16em] text-[#2c2452] whitespace-nowrap"
             >
               The Royal Wedding of
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.9 }}
-              className="mt-1 font-script text-[44px] leading-tight text-[#4a3f78] sm:text-5xl"
+              className="mt-0.5 font-script text-[46px] leading-[1.05] text-[#3e346b] sm:text-[52px]"
             >
               {wedding.groom}
             </motion.h1>
@@ -145,10 +155,10 @@ export default function Hero() {
               &
             </motion.span>
             <motion.h1
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.15, duration: 0.9 }}
-              className="font-script text-[44px] leading-tight text-[#4a3f78] sm:text-5xl"
+              className="font-script text-[46px] leading-[1.05] text-[#3e346b] sm:text-[52px]"
             >
               {wedding.bride}
             </motion.h1>
@@ -157,14 +167,11 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3, duration: 0.8 }}
-              className="mt-2 flex flex-col items-center"
+              className="mt-1 flex flex-col items-center"
             >
-              <div className="hairline-gold w-20 my-1 opacity-70" />
-              <p className="font-display text-[11px] italic tracking-wide text-[#735d43]">
+              <div className="hairline-gold w-24 my-1 opacity-75" />
+              <p className="font-display text-xs sm:text-[13px] italic tracking-wide text-[#654e33] font-medium">
                 "Forever Begins Here"
-              </p>
-              <p className="mt-0.5 text-[8.5px] uppercase tracking-[0.3em] text-[#8a6f4d]">
-                6 · 7 December 2026
               </p>
             </motion.div>
           </div>
@@ -203,17 +210,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.7, duration: 0.9 }}
-          className="relative z-10 mt-6 flex flex-col items-center gap-2 text-center"
+          className="relative z-10 mt-6 flex flex-col items-center gap-2.5 text-center"
         >
-          <div className="flex items-center gap-2 rounded-full border border-[#e2c88f]/30 bg-white/[0.06] px-5 py-2 backdrop-blur-md">
-            <Calendar size={14} className="text-[#eeb2c0]" />
-            <p className="font-display text-sm tracking-widest text-[#f5eee2]">
+          <div className="flex items-center gap-2.5 rounded-full border border-[#e2c88f]/40 bg-white/[0.08] px-6 py-2.5 backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.4)]">
+            <Calendar size={16} className="text-[#eeb2c0]" />
+            <p className="font-display text-base sm:text-lg tracking-widest text-[#ffffff] font-semibold">
               {wedding.dateLabel}
             </p>
           </div>
 
-          <p className="flex items-center justify-center gap-1.5 text-[11px] sm:text-[12px] uppercase tracking-[0.25em] text-[#ffd978] font-medium px-4 whitespace-nowrap">
-            <MapPin size={13} className="text-[#eeb2c0] shrink-0" />
+          <p className="flex items-center justify-center gap-2 text-xs sm:text-sm uppercase tracking-[0.22em] text-[#ffd978] font-semibold px-4 whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            <MapPin size={15} className="text-[#eeb2c0] shrink-0" />
             <span>{wedding.venue.name} · {wedding.venue.city}</span>
           </p>
         </motion.div>
@@ -231,7 +238,7 @@ export default function Hero() {
         className="absolute bottom-4 z-10 flex flex-col items-center gap-1.5"
         style={{ animation: "float-soft 3s ease-in-out infinite" }}
       >
-        <span className="text-[10px] uppercase tracking-[0.4em] text-[#e2c88f]/80">
+        <span className="text-xs uppercase tracking-[0.35em] text-[#e2c88f] font-medium">
           Scroll To Explore
         </span>
         <svg width="18" height="26" viewBox="0 0 18 26" fill="none">

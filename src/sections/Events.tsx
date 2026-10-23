@@ -34,26 +34,26 @@ function EventCard({ event, index }: { event: SignatureEvent; index: number }) {
 
           {/* Date pill */}
           <div className="mt-4 flex items-center justify-center gap-2">
-            <span className="text-[12px] uppercase tracking-[0.3em] text-[#eeb2c0] font-medium">
+            <span className="text-xs sm:text-[13px] uppercase tracking-[0.25em] text-[#f8c7d4] font-semibold">
               {event.dayLabel} · {event.dayNum} {event.monthLabel.split(" ")[0]}
             </span>
           </div>
 
           {/* Tagline */}
           {event.tagline && (
-            <p className="mt-1 font-display text-sm italic tracking-wider text-[#ffd978]">
+            <p className="mt-1 font-display text-sm sm:text-base italic tracking-wider text-[#ffd978]">
               "{event.tagline}"
             </p>
           )}
 
           {/* Title - bolder and brighter golden */}
-          <h3 className="font-display text-2xl sm:text-3xl text-[#ffd978] mt-2.5 font-bold tracking-wide drop-shadow-[0_2px_10px_rgba(255,217,102,0.3)]">
+          <h3 className="font-display text-3xl sm:text-4xl text-[#ffd978] mt-2.5 font-bold tracking-wide drop-shadow-[0_2px_12px_rgba(255,217,102,0.35)]">
             {event.name}
           </h3>
 
           {/* Quote if present */}
           {event.quote && (
-            <p className="mt-2 max-w-sm mx-auto font-display text-sm sm:text-base italic leading-relaxed text-[#f7f0e6]/90">
+            <p className="mt-2 max-w-sm mx-auto font-display text-base sm:text-lg italic leading-relaxed text-[#f7f0e6]">
               "{event.quote}"
             </p>
           )}
@@ -62,25 +62,25 @@ function EventCard({ event, index }: { event: SignatureEvent; index: number }) {
 
           {/* Time & Venue */}
           <div className="flex flex-col items-center gap-2 text-center">
-            <p className="flex items-center gap-2 text-base sm:text-lg text-[#ffd978] font-display font-medium">
-              <Clock size={17} className="text-[#eeb2c0]" />
+            <p className="flex items-center gap-2 text-lg sm:text-xl text-[#ffd978] font-display font-semibold">
+              <Clock size={19} className="text-[#eeb2c0]" />
               {event.time}
             </p>
-            <p className="flex items-center gap-2 text-sm sm:text-[15px] tracking-wide text-[#f7f0e6] font-medium">
-              <MapPin size={16} className="text-[#ffd978]" />
+            <p className="flex items-center gap-2 text-base sm:text-[17px] tracking-wide text-white font-medium">
+              <MapPin size={18} className="text-[#ffd978]" />
               {event.venue}
             </p>
           </div>
 
           {/* Attire Badge */}
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#eeb2c0]/50 bg-[#17133e] px-4 py-2 text-[12px] uppercase tracking-[0.2em] text-[#f8c7d4] font-medium">
-            <Shirt size={14} className="text-[#ffd978]" />
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#eeb2c0]/60 bg-[#17133e] px-4 py-2 text-xs sm:text-sm uppercase tracking-[0.18em] text-[#f8c7d4] font-semibold">
+            <Shirt size={15} className="text-[#ffd978]" />
             <span>Attire: {event.attire}</span>
           </div>
 
           {/* Note / Description */}
           {event.note && (
-            <p className="mt-4 text-[13.5px] leading-relaxed text-[#f7f0e6]/90 max-w-sm mx-auto font-normal">
+            <p className="mt-4 text-[15px] sm:text-base leading-relaxed text-white/95 max-w-sm mx-auto font-normal">
               {event.note}
             </p>
           )}

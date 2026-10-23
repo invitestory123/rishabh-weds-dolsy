@@ -23,8 +23,8 @@ export default function Timeline() {
                 <button
                   key={day.day}
                   onClick={() => setActiveDayIndex(idx)}
-                  className={`relative z-10 flex items-center gap-1.5 sm:gap-2 rounded-full px-4 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-[12px] uppercase tracking-[0.15em] sm:tracking-[0.2em] transition-colors ${
-                    isActive ? "text-[#1c1640] font-semibold" : "text-[#f5eee2]/70 hover:text-[#f5eee2]"
+                  className={`relative z-10 flex items-center gap-1.5 sm:gap-2 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm uppercase tracking-[0.16em] sm:tracking-[0.2em] transition-colors ${
+                    isActive ? "text-[#1c1640] font-bold" : "text-[#f5eee2]/80 hover:text-white"
                   }`}
                 >
                   {isActive && (
@@ -34,7 +34,7 @@ export default function Timeline() {
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
-                  <Calendar size={13} className={isActive ? "text-[#1c1640]" : "text-[#e2c88f]"} />
+                  <Calendar size={14} className={isActive ? "text-[#1c1640]" : "text-[#e2c88f]"} />
                   <span>{day.day} ({day.date.split(" ")[0]} {day.date.split(" ")[1]})</span>
                 </button>
               );
@@ -44,10 +44,10 @@ export default function Timeline() {
 
         {/* Selected Day Header */}
         <Reveal delay={0.08} className="text-center mb-8">
-          <p className="font-display text-2xl text-[#f6e2ae]">
+          <p className="font-display text-2xl sm:text-3xl text-[#f6e2ae] font-semibold">
             {currentDay.dayName}, {currentDay.date}
           </p>
-          <div className="hairline-gold mx-auto mt-2 w-24 opacity-50" />
+          <div className="hairline-gold mx-auto mt-2 w-28 opacity-60" />
         </Reveal>
 
         {/* Timeline Flow */}
@@ -77,33 +77,33 @@ export default function Timeline() {
                   <span className="absolute left-[10px] sm:left-[18px] top-2 h-[12px] w-[12px] -translate-x-1/2 rounded-full border-2 border-[#1c1640] bg-[#eeb2c0] shadow-[0_0_12px_2px_rgba(238,178,192,0.6)]" />
 
                   {/* Event content box */}
-                  <div className="flex-1 rounded-2xl border border-[#ffd978]/35 bg-[#1f194e]/85 p-4 sm:p-5 backdrop-blur-md hover:border-[#ffd978]/60 shadow-[0_10px_30px_rgba(0,0,0,0.45)] transition-all">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#ffd978]/40 bg-[#161240] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-[#ffd978]">
-                        <Clock size={12} className="text-[#eeb2c0]" />
+                  <div className="flex-1 rounded-2xl border border-[#ffd978]/40 bg-[#1f194e]/90 p-4 sm:p-5 backdrop-blur-md hover:border-[#ffd978]/70 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#ffd978]/50 bg-[#161240] px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#ffd978]">
+                        <Clock size={13} className="text-[#eeb2c0]" />
                         {evt.time}
                       </span>
 
                       {evt.attire && (
-                        <span className="inline-flex items-center gap-1 rounded-full border border-[#eeb2c0]/40 bg-[#eeb2c0]/10 px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-[#f8c7d4]">
-                          <Shirt size={11} /> {evt.attire}
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#eeb2c0]/50 bg-[#eeb2c0]/15 px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-[#f8c7d4]">
+                          <Shirt size={12} /> {evt.attire}
                         </span>
                       )}
                     </div>
 
-                    <h4 className="font-display text-lg sm:text-xl text-[#f7f0e6] font-semibold mt-1">
+                    <h4 className="font-display text-xl sm:text-2xl text-white font-semibold mt-1">
                       {evt.title}
                     </h4>
 
                     {evt.location && (
-                      <p className="flex items-center gap-1.5 text-[12px] text-[#ffd978]/90 mt-1 font-medium">
-                        <MapPin size={13} className="text-[#eeb2c0]" />
+                      <p className="flex items-center gap-1.5 text-sm sm:text-base text-[#ffd978] mt-1.5 font-medium">
+                        <MapPin size={15} className="text-[#eeb2c0]" />
                         {evt.location}
                       </p>
                     )}
 
                     {evt.note && (
-                      <p className="text-[12px] leading-relaxed text-[#f5eee2]/70 mt-2 font-sans border-t border-white/[0.06] pt-2">
+                      <p className="text-sm sm:text-[15px] leading-relaxed text-white/90 mt-2 font-sans border-t border-white/[0.08] pt-2">
                         {evt.note}
                       </p>
                     )}

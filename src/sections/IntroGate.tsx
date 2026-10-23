@@ -104,52 +104,56 @@ export default function IntroGate({
           transition={{ delay: 0.5, duration: 1 }}
           className="relative flex flex-col items-center gap-5 text-center max-w-md"
         >
-          <motion.img
-            src="/assets/ganesha.png"
-            alt="Lord Ganesha"
-            className="w-20 drop-shadow-[0_0_24px_rgba(226,200,143,0.5)] sm:w-24"
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 1 }}
-          />
+          {/* Luminous Lord Ganesha with radiant aura */}
+          <div className="relative flex items-center justify-center">
+            <div className="absolute h-32 w-32 rounded-full bg-[#ffd75e]/25 blur-2xl animate-pulse" />
+            <motion.img
+              src="/assets/ganesha.png"
+              alt="Lord Ganesha"
+              className="relative w-28 sm:w-36 drop-shadow-[0_0_35px_rgba(255,215,94,0.7)]"
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 1 }}
+            />
+          </div>
 
-          <span className="font-display text-xs sm:text-sm tracking-[0.35em] text-[#e2c88f]">
+          <span className="font-display text-sm sm:text-base tracking-[0.35em] text-[#ffd978] font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
             {wedding.verse.hindi}
           </span>
 
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.45em] text-[#f5eee2]/70">
+          <div className="flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.45em] text-[#f5eee2]/90 font-medium">
             <span>Cordially Inviting You</span>
           </div>
 
           <div className="flex flex-col items-center">
-            <h1 className="font-script text-gold text-5xl leading-tight sm:text-7xl">
+            <h1 className="font-script text-gold text-6xl leading-tight sm:text-7xl">
               {wedding.groom}
             </h1>
             <span className="font-script text-3xl leading-none text-[#eeb2c0] my-1">
               &
             </span>
-            <h1 className="font-script text-gold text-5xl leading-tight sm:text-7xl">
+            <h1 className="font-script text-gold text-6xl leading-tight sm:text-7xl">
               {wedding.bride}
             </h1>
           </div>
 
-          <div className="hairline-gold w-36 my-1" />
+          <div className="hairline-gold w-40 my-1" />
 
-          <p className="font-display text-sm tracking-widest text-[#f5eee2]/90">
+          <p className="font-display text-base sm:text-lg tracking-widest text-white font-medium">
             {wedding.dateLabel}
           </p>
-          <p className="text-[11px] uppercase tracking-[0.25em] text-[#e2c88f]">
+          <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#ffd978] font-medium">
             {wedding.venue.name} · {wedding.venue.city}
           </p>
 
           <motion.button
             onClick={handleOpen}
             whileTap={{ scale: 0.94 }}
-            className="group relative mt-5 flex items-center gap-2.5 rounded-full border border-[#e2c88f]/70 bg-gradient-to-r from-[#e2c88f]/20 via-[#eeb2c0]/15 to-[#e2c88f]/20 px-9 py-3.5 text-[12px] font-medium uppercase tracking-[0.3em] text-[#f6e2ae] shadow-[0_4px_30px_rgba(226,200,143,0.25)] backdrop-blur-md transition-all hover:border-[#e2c88f] hover:bg-[#e2c88f]/25"
+            className="group relative mt-5 flex items-center gap-2.5 rounded-full border border-[#ffd978]/80 bg-gradient-to-r from-[#e2c88f]/25 via-[#eeb2c0]/20 to-[#e2c88f]/25 px-10 py-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-[#fff2cc] shadow-[0_4px_35px_rgba(255,217,102,0.35)] backdrop-blur-md transition-all hover:border-[#ffd978] hover:bg-[#e2c88f]/30"
           >
-            <Sparkles size={14} className="text-[#e2c88f] animate-spin-slow" />
+            <Sparkles size={16} className="text-[#ffd978] animate-spin-slow" />
             <span>Open Royal Invitation</span>
-            <Sparkles size={14} className="text-[#e2c88f] animate-spin-slow" />
+            <Sparkles size={16} className="text-[#ffd978] animate-spin-slow" />
           </motion.button>
         </motion.div>
       </motion.div>
