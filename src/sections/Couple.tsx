@@ -50,21 +50,21 @@ function ArchCard({
           <div className="hairline-gold mx-auto my-5 w-28 opacity-75" />
 
           {/* Lineage details with increased font sizes & high contrast */}
-          <div className="flex flex-col gap-4 text-left bg-black/35 p-4 sm:p-5 rounded-2xl border border-[#ffd978]/25 shadow-inner">
+          <div className="flex flex-col gap-4 text-left bg-black/40 p-4 sm:p-5 rounded-2xl border border-[#ffd978]/30 shadow-inner">
             <div>
-              <p className="text-xs sm:text-[13px] uppercase tracking-[0.22em] text-[#ffd978] font-semibold">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-[#ffd978] font-bold">
                 {grandparentLabel}
               </p>
-              <p className="text-base sm:text-[17px] leading-relaxed tracking-wide text-white font-medium mt-1">
+              <p className="text-lg sm:text-[20px] leading-relaxed tracking-wide text-white font-semibold mt-1">
                 {cleanLineage(grandparents)}
               </p>
             </div>
 
-            <div className="border-t border-[#ffd978]/20 pt-3">
-              <p className="text-xs sm:text-[13px] uppercase tracking-[0.22em] text-[#f8c7d4] font-semibold">
+            <div className="border-t border-[#ffd978]/25 pt-3.5">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.22em] text-[#f8c7d4] font-bold">
                 {parentLabel}
               </p>
-              <p className="text-base sm:text-[17px] leading-relaxed tracking-wide text-white font-medium mt-1">
+              <p className="text-lg sm:text-[20px] leading-relaxed tracking-wide text-white font-semibold mt-1">
                 {cleanLineage(parents)}
               </p>
             </div>
@@ -111,12 +111,9 @@ export default function Couple() {
           />
         </div>
 
-        {/* Monogram & blessing quote */}
+        {/* Blessing quote without R · D monogram */}
         <Reveal delay={0.3} className="flex flex-col items-center gap-2.5 text-center pt-3">
-          <span className="font-display text-2xl sm:text-3xl tracking-[0.4em] text-[#ffd978] font-semibold">
-            {wedding.monogram}
-          </span>
-          <p className="font-display text-lg sm:text-xl italic text-[#f7f0e6] max-w-lg leading-relaxed">
+          <p className="font-display text-xl sm:text-2xl italic text-[#f7f0e6] max-w-xl leading-relaxed">
             "Joined by destiny, celebrated with family, and blessed with love for eternity."
           </p>
         </Reveal>
