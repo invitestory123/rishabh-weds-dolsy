@@ -37,8 +37,8 @@ export interface SignatureEvent {
 export const wedding = {
   bride: "Dolsy",
   groom: "Rishabh",
-  brideFull: "Dolsy Arora",
-  groomFull: "Rishabh Gulati",
+  brideFull: "Dolsy",
+  groomFull: "Rishabh",
 
   // Family details
   groomGrandparents: "Late Smt. Leela & Late Sh. Ishwar Datt",
