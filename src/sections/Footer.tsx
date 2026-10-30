@@ -114,7 +114,7 @@ export default function Footer() {
             With love & blessings
           </p>
           <p className="text-sm sm:text-base uppercase tracking-[0.25em] text-white font-medium">
-            Gulati and Arora families
+            GULATI FAMILY & MALIKI FAMILY
           </p>
         </div>
 
