@@ -41,10 +41,10 @@ export const wedding = {
   groomFull: "Rishabh",
 
   // Family details
-  groomGrandparents: "Late Smt. Leela & Late Sh. Ishwar Datt",
-  groomParents: "Smt. Lalita & Sh. Kailash",
-  brideGrandparents: "Late Smt. Raj Rani & Late Sh. Harbans Lal",
-  brideParents: "Smt. Sunita & Sh. Sanjeev",
+  groomGrandparents: "Late Smt. Leela & Late Sh. Ishwar Datt Gulati",
+  groomParents: "Smt. Lalita & Sh. Kailash Gulati",
+  brideGrandparents: "Late Smt. Raj Rani Arora & Sh. Harbans Lal Arora",
+  brideParents: "Smt. Sunita & Sh. Sanjeev Arora",
 
   hashtag: "#RISHUkiDOLO♥️",
   monogram: "R · D",
